@@ -23,12 +23,14 @@ def append(value):
     skrn.delete(0, tk.END)
     skrn.insert(0, data + value)
     
-
-
 for row in range(4):
     for column in range(4):
-        button = tk.Button(keypad, text=buttons[row][column], width=5, height=2 , command=lambda: append(buttons[row][column]))
-        button.grid(row=row, column=column, padx=5, pady=5)
+        value = buttons[row][column]  # Capture the current button value
+        a = tk.Button(keypad, text=value, width=5, height=2, command=lambda v=value: append(v))
+        a.grid(row=row, column=column, padx=5, pady=5)
+        
+
+    
 
 
         
