@@ -11,15 +11,18 @@ skrn.pack()
 keypad = tk.Frame()
 keypad.pack(side='bottom')
 
+buttons = [
+    ['1','2','3','+'],
+    ['4','5','6','-'],
+    ['7','8','9','*'],
+    ['0','=','C','/']
+]
 
-b1 = tk.Button(keypad,text='1')
-b1.grid(row=0,column = 0)
-b2 = tk.Button(keypad,text='2')
-b2.grid(row=0,column = 1)
-b3 = tk.Button(keypad,text='3')
-b3.grid(row=0,column = 2)
-b4 = tk.Button(keypad,text='4')
-b4.grid(row=0,column = 3)
+for row in range(4):
+    for column in range(4):
+        button = tk.Button(keypad, text=buttons[row][column], width=5, height=2)
+        button.grid(row=row, column=column, padx=5, pady=5)
+        
 
 
 tk.mainloop()
