@@ -18,10 +18,16 @@ buttons = [
     ['0','=','C','/']
 ]
 
+def append():
+    data = screen
+
+
 for row in range(4):
     for column in range(4):
-        button = tk.Button(keypad, text=buttons[row][column], width=5, height=2)
+        button = tk.Button(keypad, text=buttons[row][column], width=5, height=2 , command=lambda: append(buttons[row][column]))
         button.grid(row=row, column=column, padx=5, pady=5)
+
+
         
 
 
